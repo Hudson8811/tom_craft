@@ -1,0 +1,21 @@
+* {
+  outline: none;
+}
+
+body {
+  position: relative;
+  display: block;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+}
+
+.screen {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: calc(100% - 80px);
+  margin: 0 auto;
+}
