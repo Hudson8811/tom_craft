@@ -1,0 +1,362 @@
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: calc(100% - 32px);
+  margin: 0 auto;
+  max-width: 1556px;
+
+  @include tMax {
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    margin-top: -20px;
+
+    @include tMax {
+      top: 200px;
+    }
+
+    @include mMax {
+      width: 16px;
+      margin-top: -20px;
+    }
+
+    &:first-child {
+      left: 0;
+    }
+
+    &:last-child {
+      right: 0;
+    }
+  }
+
+  &-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  &-slider {
+    width: 50%;
+    max-width: 583px;
+    height: 74vh;
+    flex-grow: 1;
+    margin-right: 40px;
+    margin-top: 37px;
+
+    @include tMax {
+      margin: 0;
+      margin-bottom: 20px;
+      height: 400px;
+      max-width: 300px;
+    }
+
+    @include mMax {
+      width: 100%;
+    }
+
+    &-item {
+      height: 74vh;
+      width: 100%;
+
+      @include tMax {
+        height: 400px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &-content {
+    width: 100%;
+    max-width: 587px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+
+    @include tMax {
+      text-align: center;
+      padding-bottom: 40px;
+
+      a {
+        margin: 0 auto;
+      }
+    }
+
+    p {
+      display: block;
+      max-width: 416px;
+      margin-bottom: 12px;
+
+      @include tMax {
+        max-width: none;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 40px;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 29px;
+
+      b {
+        font-family: sans-serif;
+      }
+    }
+  }
+
+  &-size {
+    margin: 54px 0 24px;
+
+    h4 {
+      display: block;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    a {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 0 -13px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      @include tMax {
+        justify-content: center;
+      }
+
+      li {
+        margin: 24px 13px;
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 32px;
+          height: 32px;
+          font-size: 16px;
+          line-height: 19px;
+          text-decoration: none;
+          border: 1px solid transparent;
+          transition: border 0.2s linear;
+          color: #000;
+
+          &:hover,
+          &.is-active {
+            border-color: #000000;
+          }
+        }
+      }
+    }
+  }
+
+  &-modal {
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -999;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    visibility: hidden;
+    transition: opacity 0.2s linear;
+
+    &.is-active {
+      visibility: visible;
+      z-index: 999;
+      opacity: 1;
+    }
+
+    &-content {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      flex-grow: 1;
+      padding: 64px 40px;
+      padding-left: 177px;
+      width: 100%;
+      height: 100%;
+
+      @include mMax {
+        padding: 0;
+      }
+    }
+
+    &-nav {
+      position: absolute;
+      top: 64px;
+      left: 40px;
+      z-index: 2;
+      display: block;
+      width: 117px;
+      max-height: 80vh;
+      overflow-y: auto;
+
+      @include mMax {
+        display: none;
+      }
+
+      div {
+        height: 157px;
+        width: 100%;
+        opacity: 0.5;
+        transition: opacity 0.2s linear;
+
+        &:hover,
+        &.is-active {
+          opacity: 1;
+        }
+
+        & + div {
+          margin-top: 24px;
+        }
+
+        img {
+          display: block;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+
+    &-slider {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      max-width: 900px;
+      transform: translateX(-50%);
+
+      @include tMax {
+        height: 70vh;
+        top: 50%;
+        right: 0;
+        left: auto;
+        transform: translate(-30%, -50%);
+      }
+
+      @include mMax {
+        width: 70%;
+        right: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      div {
+        height: 100%;
+        width: 100%;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .slick-arrow {
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+
+        &:first-child {
+          left: -60px;
+
+          @include mMax {
+            left: -30px;
+          }
+        }
+
+        &:last-child {
+          right: -60px;
+
+          @include mMax {
+            right: -30px;
+          }
+        }
+
+        @include mMax {
+          width: 16px;
+          margin-top: -10px;
+        }
+      }
+    }
+
+    &-close {
+      position: absolute;
+      right: 40px;
+      top: 64px;
+      cursor: pointer;
+      transition: transform 0.2s linear;
+
+      @include mMax {
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover {
+        transform: rotate(90deg);
+      }
+
+      path {
+        transition: 0.2s linear;
+      }
+
+      &:hover {
+        path {
+          fill: #000;
+        }
+      }
+    }
+  }
+}

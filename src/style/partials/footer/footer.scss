@@ -1,0 +1,56 @@
+.footer {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 43px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+
+  &-menu {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include mMax {
+      margin: 0 -15px;
+      justify-content: center;
+
+      li {
+        margin: 0 15px;
+      }
+    }
+
+    li + li {
+      margin-left: 40px;
+
+      @include mMax {
+        margin-left: 15px;
+      }
+    }
+
+    a {
+      display: block;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: rgba(0, 0, 0, 0.6);
+      text-decoration: none;
+      transition: opacity 0.2s linear;
+
+      @include mMax {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

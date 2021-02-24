@@ -1,3 +1,9 @@
+@mixin tMax {
+  @media (max-width: 999px) {
+    @content;
+  }
+}
+
 @mixin mMax {
   @media (max-width: 768px) {
     @content;
