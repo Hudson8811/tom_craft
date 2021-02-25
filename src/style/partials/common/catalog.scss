@@ -1,13 +1,53 @@
 .catalog {
+  position: relative;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
   max-width: 1300px;
   margin: 0 auto;
-  width: calc(100% - 32px);
+  width: calc(100% - 80px);
   flex-wrap: wrap;
   padding: 56px 20px 0;
+
+  .catalog-filters-heading {
+    display: none;
+  }
+
+  @include mMax {
+    padding-left: 0;
+    padding-right: 0;
+    width: calc(100% - 32px);
+
+    .catalog-filters-heading {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      padding-right: 20px;
+
+      .catalog-filters-more {
+        &:before {
+          width: 10px;
+          height: 2px;
+          margin-left: 10px;
+        }
+
+        &:after {
+          height: 10px;
+          width: 2px;
+          margin-left: 14px;
+          margin-top: -5px;
+        }
+      }
+
+      .catalog-filters-close.is-active {
+        display: none;
+      }
+    }
+  }
 
   &-card {
     display: block;
@@ -18,12 +58,26 @@
     max-height: 716px;
     text-decoration: none;
 
+    @include dMax {
+      width: calc(50% - 7px);
+      height: auto;
+      margin-right: 14px;
+    }
+
+    @include mMax {
+      margin-bottom: 16px;
+    }
+
     &-size {
       position: absolute;
       bottom: 64px;
       width: 100%;
       opacity: 0;
       transition: opacity 0.2s linear;
+
+      @include mMax {
+        bottom: 0;
+      }
 
       h3 {
         display: block;
@@ -35,6 +89,11 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: #000000;
+
+        @include mMax {
+          font-size: 12px;
+          margin-bottom: 8px;
+        }
       }
 
       ol {
@@ -53,6 +112,10 @@
           text-transform: uppercase;
           color: #000000;
           margin: 0 11px;
+
+          @include mMax {
+            font-size: 12px;
+          }
 
           & + li {
             &:before {
@@ -81,6 +144,10 @@
       margin-top: 24px;
       list-style: none;
 
+      @include mMax {
+        margin-top: 16px;
+      }
+
       li {
         display: block;
         font-weight: 600;
@@ -89,16 +156,31 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: #000000;
+
+        b {
+          font-weight: 600;
+          font-family: sans-serif;
+        }
+
+        @include mMax {
+          font-size: 12px;
+          line-height: 20px;
+        }
       }
     }
 
     &:nth-child(2n) {
       margin-right: 0;
+
+      @include dMax {
+        margin-right: 0;
+      }
     }
 
     &-img {
       display: block;
       width: auto;
+      margin: 0 auto;
       max-width: 100%;
       height: 100%;
       object-fit: cover;
@@ -109,6 +191,14 @@
         position: relative;
         height: calc(100% - 96px);
         width: 100%;
+
+        @include dMax {
+          max-height: 300px;
+        }
+
+        @include mMax {
+          max-height: 220px;
+        }
       }
     }
   }
@@ -121,6 +211,11 @@
     align-items: flex-start;
     margin: -64px 0 -20px;
     padding-left: 312px;
+
+    @include mMax {
+      padding-left: 0;
+      padding-top: 106px;
+    }
   }
 
   &-filters {
@@ -134,13 +229,89 @@
     border-right: 1px solid #dcdcdc;
     height: calc(100vh - 86px);
 
+    &-mobile_clear_all {
+      display: none;
+
+      @include mMax {
+        display: block;
+      }
+
+      &-link {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        width: 100%;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #db0000;
+        text-decoration: none;
+        border-top: 1px solid #dcdcdc;
+      }
+    }
+
+    &-mobile_heading {
+      display: none;
+      margin-bottom: 4px;
+
+      @include mMax {
+        display: block;
+
+        .header-tabs {
+          display: flex;
+        }
+      }
+    }
+
+    &-mobile_burger {
+      display: none;
+
+      @include mMax {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        display: block;
+
+        svg {
+          position: relative;
+          top: auto;
+          right: auto;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    @include mMax {
+      display: none;
+      top: 0;
+      z-index: 999;
+      background-color: #fff;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      padding-bottom: 0;
+
+      .catalog-filters-heading {
+        display: none;
+      }
+
+      &.is-active {
+        display: block;
+      }
+    }
+
     &::-webkit-scrollbar-track {
       background: #fff;
     }
 
     &::-webkit-scrollbar-thumb,
     .main-sidebar::-webkit-scrollbar-thumb:hover {
-      background: #aaa;
+      background: #000;
       border-radius: 10px;
     }
 
@@ -171,6 +342,16 @@
       text-decoration: none;
       background: transparent;
       transition: background 0.2s linear;
+
+      @include mMax {
+        padding: 13px 16px;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #333333;
+      }
 
       &:hover {
         background: #f1f2f3;
@@ -274,6 +455,62 @@
       &.is-active {
         &:after {
           opacity: 0;
+        }
+      }
+    }
+  }
+
+  &-pag {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 28px;
+    list-style: none;
+
+    @include mMax {
+      top: 10px;
+      right: auto;
+      left: 0;
+    }
+
+    li {
+      margin: 0 6px;
+
+      &:last-child {
+        margin-left: 19px;
+        margin-right: 0;
+      }
+
+      a {
+        display: block;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #000000;
+        text-decoration: none;
+        transition: opacity 0.2s linear;
+
+        @include mMax {
+          font-size: 12px;
+        }
+
+        &.disabled {
+          opacity: 0.4;
+          pointer-events: none;
+        }
+
+        &.is-active {
+          text-decoration-line: underline;
+          text-transform: uppercase;
+          color: #000000;
+        }
+
+        &:hover {
+          opacity: 0.4;
         }
       }
     }

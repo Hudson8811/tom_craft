@@ -97,7 +97,8 @@
           transform-origin: center;
         }
 
-        &:hover {
+        &:hover,
+        &.is-active {
           opacity: 1;
 
           &:before {
@@ -164,7 +165,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #fff;
-    padding: 20px 20px 35px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -175,10 +176,6 @@
     &.is-active {
       opacity: 1;
       z-index: 999;
-    }
-
-    .header-logo {
-      width: 200px;
     }
 
     .card-modal-close {
@@ -200,6 +197,205 @@
 
       li + li {
         margin-top: 40px;
+      }
+    }
+  }
+}
+
+.emerge_basket {
+  position: relative;
+  z-index: 2;
+  width: 354px;
+  max-width: 100%;
+  margin-top: 33px;
+  margin-right: 40px;
+  margin-left: auto;
+  background-color: #fff;
+
+  @include mMax {
+    margin-right: 0;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  &-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -999;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+
+    &.is-active {
+      opacity: 1;
+      z-index: 999;
+    }
+  }
+
+  &-overlay {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &-heading {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+    height: 30px;
+    width: 100%;
+  }
+
+  &-close {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    left: 16px;
+    top: 7px;
+    display: none;
+
+    @include mMax {
+      display: block;
+    }
+  }
+
+  &-content {
+    box-sizing: border-box;
+    padding: 16px;
+
+    &-title {
+      margin: 16px 0;
+      text-align: center;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+      display: none;
+
+      &.is-active {
+        display: block;
+      }
+    }
+  }
+
+  &-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 16px;
+
+    img {
+      display: block;
+      margin-right: 16px;
+      width: 96px;
+      height: 130px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    h2 {
+      display: block;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    p {
+      display: block;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    span {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+
+      b {
+        font-weight: inherit;
+        font-family: sans-serif;
+      }
+    }
+
+    &_close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+      margin-left: auto;
+      cursor: pointer;
+      background: #000000;
+      border: 1px solid #000000;
+    }
+  }
+
+  &-pays {
+    box-sizing: border-box;
+    padding: 24px 0;
+    text-align: center;
+    border-top: 1px solid #c4c4c4;
+
+    h2 {
+      display: block;
+      margin-bottom: 24px;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+
+      b {
+        font-family: sans-serif;
+        font-weight: inherit;
+      }
+    }
+
+    .button {
+      width: 100%;
+      max-width: 306px;
+      margin: 0 auto;
+    }
+
+    &.is-active {
+      padding: 24px 0 8px;
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      .button {
+        display: none;
       }
     }
   }
