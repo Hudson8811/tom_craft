@@ -1,0 +1,112 @@
+.big_basket {
+  &-content {
+    padding: 0;
+    border: none;
+  }
+
+  &-item {
+    box-sizing: border-box;
+    padding: 16px 40px 16px 16px;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mMax {
+      padding: 16px;
+      align-items: flex-start;
+
+      .link {
+        font-size: 0;
+        width: 18px;
+        height: 18px;
+        background: #000000 center / 8px url(../img/white-check.svg) no-repeat;
+        flex-shrink: 0;
+      }
+    }
+
+    & + & {
+      margin-top: 16px;
+    }
+
+    a {
+      display: block;
+      margin-left: auto;
+      font-weight: 600;
+    }
+  }
+
+  &-img {
+    display: block;
+    width: 132px;
+    height: 174px;
+    margin-right: 16px;
+    object-fit: cover;
+    object-position: center;
+
+    @include mMax {
+      width: 70px;
+      height: 95px;
+    }
+  }
+
+  &-text {
+    display: block;
+    min-width: 150px;
+
+    h2 {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+
+      @include mMax {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+
+    p {
+      display: block;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+
+      @include mMax {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
+      & + p {
+        margin-top: 4px;
+      }
+    }
+
+    span {
+      display: block;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+
+      @include mMax {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
+      b {
+        font-family: sans-serif;
+      }
+    }
+  }
+}

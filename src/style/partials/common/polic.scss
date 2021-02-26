@@ -1,0 +1,102 @@
+.text_page {
+  .container {
+    position: relative;
+  }
+
+  &-bac_btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: block;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: opacity 0.2s linear;
+    transform: translateY(-50%);
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @include mMax {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  .header-logo {
+    margin: 0 auto;
+  }
+
+  &-content {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    h2 {
+      display: block;
+      margin-bottom: 24px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+
+      @include mMax {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+
+    p {
+      display: block;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      color: #000000;
+
+      @include mMax {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
+      & + p {
+        margin-top: 20px;
+
+        @include mMax {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      display: block;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      color: #000000;
+      margin-bottom: 20px;
+
+      @include mMax {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
+      li + li {
+        margin-top: 20px;
+
+        @include mMax {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.contacts {
+  &-page {
+    .payment-tab {
+      max-width: 656px;
+    }
+
+    .payment-content {
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &-payment-wrapper {
+    padding: 16px;
+    border: 1px solid #dcdcdc;
+
+    @include mMax {
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &-row {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 16px;
+
+    @include mMax {
+      display: block;
+      margin-bottom: 0;
+    }
+  }
+
+  &-col {
+    box-sizing: border-box;
+    width: calc(50% - 8px);
+    padding: 16px;
+    border: 1px solid #dcdcdc;
+
+    @include mMax {
+      width: 100%;
+      margin-bottom: 16px;
+
+      & + & {
+        margin-bottom: 24px;
+      }
+    }
+
+    h3 {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+    }
+
+    a {
+      display: block;
+      margin-bottom: 16px;
+      max-width: max-content;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+      text-decoration: none;
+    }
+
+    p {
+      display: block;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+    }
+  }
+
+  &-com {
+    box-sizing: border-box;
+    padding: 222px 0 164px;
+
+    @include mMax {
+      padding: 24px 16px;
+      border: 1px solid #dcdcdc;
+    }
+
+    img {
+      display: block;
+      width: 64px;
+      margin: 0 auto 24px;
+    }
+
+    h2 {
+      display: block;
+      max-width: 435px;
+      margin: 0 auto 40px;
+      width: auto;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+
+      @include mMax {
+        margin-bottom: 24px;
+      }
+    }
+
+    a {
+      display: block;
+      width: max-content;
+      margin: 0 auto;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1em;
+      text-decoration-line: underline;
+      text-transform: uppercase;
+      color: #000000;
+      opacity: 0.8;
+
+      @include mMax {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+  }
+}

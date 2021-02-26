@@ -1,5 +1,4 @@
 .catalog {
-  position: relative;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
@@ -15,6 +14,7 @@
   }
 
   @include mMax {
+    position: relative;
     padding-left: 0;
     padding-right: 0;
     width: calc(100% - 32px);
@@ -204,6 +204,7 @@
   }
 
   &-wrapper {
+    position: relative;
     box-sizing: border-box;
     width: 100%;
     display: flex;
@@ -465,7 +466,7 @@
     justify-content: flex-end;
     align-items: center;
     position: absolute;
-    right: 0;
+    right: 40px;
     top: 28px;
     list-style: none;
 

@@ -1,0 +1,54 @@
+.main_page {
+  .main {
+    padding: 0;
+  }
+
+  &-wrappger {
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  .header {
+    background-color: transparent;
+    border: none;
+
+    .header-basket {
+      color: #fff;
+      span:nth-child(1) {
+        @include mMax {
+          background: center/auto url(../img/white_basket.svg) no-repeat;
+        }
+      }
+    }
+
+    .header-tabs {
+      margin: 0 auto;
+
+      a {
+        color: #fff;
+
+        &:before {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  .footer {
+    background: rgba(39, 39, 39, 0.8);
+    border: none;
+
+    .footer-menu a {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}

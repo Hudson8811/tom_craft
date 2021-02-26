@@ -176,4 +176,5 @@ $(document).ready(function(){
         $('.payment-tabs-item--on').removeClass('is-active');
         $('.payment-form').addClass('disabled');
     });
+
 });
