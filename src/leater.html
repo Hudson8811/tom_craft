@@ -1,0 +1,615 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		/* -------------------------------------
+        	GLOBAL RESETS
+    	------------------------------------- */
+		img {
+			border: none;
+			-ms-interpolation-mode: bicubic;
+			max-width: 100%;
+		}
+
+		body {
+			background-color: #f6f6f6;
+			font-family: sans-serif;
+			-webkit-font-smoothing: antialiased;
+			font-size: 14px;
+			line-height: 1.4;
+			margin: 0;
+			padding: 0;
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%;
+		}
+
+		table {
+			border-collapse: collapse;
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt;
+			width: 100%;
+			border-spacing: 0;
+			border: none;
+		}
+
+		table td {
+			padding: 0;
+			font-family: sans-serif;
+			font-size: 14px;
+			vertical-align: top;
+		}
+
+		/* -------------------------------------
+        	BODY & CONTAINER
+    	------------------------------------- */
+
+		.body {
+			background-color: #f6f6f6;
+			width: 100% !important;
+		}
+
+		/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+		.container {
+			display: block;
+			margin: 0 auto !important;
+			/* makes it centered */
+			max-width: 600px;
+			width: 100%;
+		}
+
+		/* This should also be a block element, so that it will fill 100% of the .container */
+		.content {
+			box-sizing: border-box;
+			display: block;
+			margin: 0 auto;
+			max-width: 600px;
+		}
+
+		/* -------------------------------------
+        	HEADER, FOOTER, MAIN
+    	------------------------------------- */
+		.header-logo {
+			display: block;
+			text-align: center;
+			margin: 30px 0 25px;
+		}
+
+		.header-header {
+			display: block;
+			text-align: center;
+			margin: 0;
+		}
+
+		.header-header img {
+			display: block;
+		}
+
+		.main {
+			border-spacing: 0;
+			font-family: sans-serif;
+			background-color: #fff;
+			color: #000;
+			border: none;
+		}
+
+		.wrapper {
+			box-sizing: border-box;
+			padding: 30px;
+		}
+
+		.content-block {
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+
+		.footer {
+			clear: both;
+			margin-top: 10px;
+			text-align: center;
+			width: 100%;
+		}
+
+		.footer td,
+		.footer p,
+		.footer span,
+		.footer a {
+			color: #fff;
+			font-size: 14px;
+			text-align: center;
+		}
+
+		/* -------------------------------------
+        	TYPOGRAPHY
+    	------------------------------------- */
+		h1,
+		h2,
+		h3,
+		h4 {
+			color: #000000;
+			font-family: sans-serif;
+			font-weight: 400;
+			line-height: 1.4;
+			margin: 0;
+			margin-bottom: 30px;
+		}
+
+		h1 {
+			font-size: 35px;
+			font-weight: 300;
+			text-align: center;
+			text-transform: capitalize;
+		}
+
+		p,
+		ul,
+		ol {
+			color: #000;
+			font-family: sans-serif;
+			font-size: 0.9375rem;
+			font-weight: normal;
+			margin: 0;
+			margin-bottom: 20px;
+		}
+
+		p li,
+		ul li,
+		ol li {
+			list-style-position: inside;
+			margin-left: 5px;
+		}
+
+		a {
+			color: #0065b5;
+			text-decoration: underline;
+		}
+
+		/* -------------------------------------
+        	BUTTONS
+    	------------------------------------- */
+		.btn {
+			box-sizing: border-box;
+			width: 100%;
+		}
+
+		.btn>tbody>tr>td {
+			padding-bottom: 20px;
+		}
+
+		.btn table {
+			width: auto;
+		}
+
+		.btn table td {
+			background-color: #ffffff;
+			border-radius: 5px;
+			text-align: center;
+		}
+
+		.btn a {
+			font-weight: 400;
+			padding-right: 20px;
+			padding-left: 20px;
+			height: 40px;
+			line-height: 40px;
+			display: block;
+			color: #ffffff;
+			text-align: center;
+			background: #73b259;
+			border-radius: 4px;
+			font-size: 15px;
+			text-decoration: none;
+		}
+
+		.btn-primary table td {
+			background-color: #0065b5;
+		}
+
+		.btn-primary a {
+			background-color: #0065b5;
+			border-color: #0065b5;
+			color: #ffffff;
+		}
+
+		ul {
+			padding-left: 0;
+			margin-left: 0;
+		}
+
+		/* -------------------------------------
+        	OTHER STYLES THAT MIGHT BE USEFUL
+    	------------------------------------- */
+		.last {
+			margin-bottom: 0;
+		}
+
+		.first {
+			margin-top: 0;
+		}
+
+		.align-center {
+			text-align: center;
+		}
+
+		.align-right {
+			text-align: right;
+		}
+
+		.align-left {
+			text-align: left;
+		}
+
+		.clear {
+			clear: both;
+		}
+
+		.mt0 {
+			margin-top: 0;
+		}
+
+		.mb0 {
+			margin-bottom: 0;
+		}
+
+		.preheader {
+			color: transparent;
+			display: none;
+			height: 0;
+			max-height: 0;
+			max-width: 0;
+			opacity: 0;
+			overflow: hidden;
+			mso-hide: all;
+			visibility: hidden;
+			width: 0;
+		}
+
+		.powered-by a {
+			text-decoration: none;
+		}
+
+		hr {
+			border: 0;
+			border-bottom: 1px solid #f6f6f6;
+			margin: 20px 0;
+		}
+
+		h2 {
+			border-top: 1px solid #e6e6e6;
+			border-bottom: 1px solid #e6e6e6;
+			padding: 10px 0;
+			margin: 10px 0 0;
+		}
+
+		.services-item {
+			border-bottom: 1px solid #e6e6e6;
+			padding: 20px 0;
+		}
+
+		.services-item.no-border {
+			border: none;
+		}
+
+		.services-item p {
+			margin-bottom: 10px;
+		}
+
+		.services-item a {
+			display: block;
+			margin: 0 0 10px;
+			font-size: 16px;
+		}
+
+		table td.footer_links {
+			text-align: right;
+			padding-right: 20px;
+			padding-bottom: 15px;
+		}
+
+		/* -------------------------------------
+        	RESPONSIVE AND MOBILE FRIENDLY STYLES
+    	------------------------------------- */
+		@media only screen and (max-width: 620px) {
+			h3{
+                font-size: 16px!important;
+                line-height: 19px!important;
+            }
+
+            h4{
+                font-size: 16px!important;
+                line-height: 19px!important;
+            }
+
+            .info-row{
+                padding: 24px 16px 48px!important;
+            }
+
+            .info-row *{
+                font-size: 14px!important;
+                line-height: 17px!important;
+            }
+
+            .card-item img{
+                width: 95px!important;
+                height: 124px!important;
+            }
+
+            .card-item td:first-child{
+                width: 95px!important;
+            }
+
+            .card-item p{
+                font-size: 12px!important;
+                line-height: 14px!important;
+            }
+
+            .pay-info{
+                font-size: 14px!important;
+                line-height: 17px!important;
+            }
+
+            .footer p{
+                font-size: 14px!important;
+                line-height: 17px!important;
+            }
+
+            .footer a{
+                font-size: 24px!important;
+                line-height: 29px!important;
+            }
+		}
+
+		/* -------------------------------------
+        	PRESERVE THESE STYLES IN THE HEAD
+    	------------------------------------- */
+		@media all {
+			.ExternalClass {
+				width: 100%;
+			}
+
+			.ExternalClass,
+			.ExternalClass p,
+			.ExternalClass span,
+			.ExternalClass font,
+			.ExternalClass td,
+			.ExternalClass div {
+				line-height: 100%;
+			}
+
+			.apple-link a {
+				color: inherit !important;
+				font-family: inherit !important;
+				font-size: inherit !important;
+				font-weight: inherit !important;
+				line-height: inherit !important;
+				text-decoration: none !important;
+			}
+
+			.btn-primary table td:hover {
+				background-color: #34495e !important;
+			}
+
+			.btn-primary a:hover {
+				background-color: #34495e !important;
+				border-color: #34495e !important;
+			}
+		}
+
+
+		table[class=body] td.two-columns {
+			font-size: 0 !important;
+		}
+
+		/* .two-columns .column {
+			max-width: 50% !important;
+		}
+
+		@media only screen and (max-width:450px) {
+			.two-columns .column {
+				max-width: 100% !important;
+				text-align: center !important;
+			}
+		}
+
+		@media screen and (min-width:451px) and (max-width:635px) {
+			.two-columns .column {
+				max-width: 50% !important;
+			}
+		} */
+	</style>
+</head>
+
+<body class=""
+	style="width: 100% !important;background-color: #ffffff;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 14px;line-height: 1.4;margin: 0;padding:0 0 20px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<table border="0" cellpadding="0" cellspacing="0" class="body"
+		style="width: 100% !important;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;border: none;background-color: #ffffff;">
+		<tr>
+			<td class="container"
+				style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;display: block;max-width: 700px;width: 100%;margin: 0 auto !important;">
+				<div class="content" style="box-sizing: border-box;display: block;margin: 0 auto;max-width: 700px;">
+					<span class="header-header" style="display: block;text-align: center;margin: 0;">
+                        <a target="_blank"
+							href="https://russia-israel.com" style="text-align: center; display: block;padding: 15px 0;">
+                            <img
+								src="img/logo.svg"
+								style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%; width: 208px; display: block; margin: 0 auto;">
+                        </a>
+                    </span>
+
+					<!-- START CENTERED WHITE CONTAINER -->
+					<span class="preheader"
+						style="color: transparent;display: none;height: 0;max-height: 0;max-width: 0;opacity: 0;overflow: hidden;mso-hide: all;visibility: hidden;width: 0;"></span>
+					<table class="main"
+						style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;font-family: sans-serif;background-color: #ffffff;color: #000;">
+
+						<!-- START MAIN CONTENT AREA -->
+						<tr>
+							<td class="wrapper"
+								style="padding: 66px 16px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box; background: linear-gradient(270deg, #333333 -0.86%, #666666 100%), #C4C4C4;" >
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="color: #fff;font-family: sans-serif;margin: 0;" >
+                                            <h3 style="color: #fff;font-family: sans-serif;font-weight: 800;font-size: 28px;line-height: 34px;text-align: center;letter-spacing: 0.1em;text-transform: uppercase; color: #FFFFFF;margin: 0;">Заказ передан в службу доставки</h3>
+                                        </td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td class="wrapper info-row"
+								style="padding: 51px 16px 64px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box; background: #F3F3F3;">
+								<table>
+									<tr>
+										<td>
+											<p style="font-family: sans-serif;margin: 0; margin-bottom: 16px; text-align: center;">
+												<span style="font-weight: 600; font-size: 16px; line-height: 19px; text-align: center; color: #000000;"><b style="font-weight: 800; font-size: 16px; line-height: 19px; text-align: center; color: #000000;">Никита,</b> добрый день!</span>
+                                            </p>
+                                            <p style="font-family: sans-serif;margin: 0; margin-bottom: 24px; text-align: center; font-weight: normal; font-size: 14px; line-height: 17px; color: #000000;">Заказ подтвержден и передан в службу доставки.</p>
+                                            <table>
+                                                <tr>
+                                                    <td style="padding-right:12px; width: 50%; text-align: right; padding-bottom: 8px;">
+                                                        <span style="font-family: sans-serif;margin: 0; text-align: center; font-weight: 600; font-size: 16px; line-height: 19px; color: #000000;">Номер заказа</span>
+                                                    </td>
+                                                    <td style="padding-left:12px; width: 50%; text-align: left;">
+                                                        <a href="tel:+723124531" style="font-family: sans-serif;margin: 0; text-align: center; font-weight: 600; font-size: 16px; line-height: 19px; color: #000000; text-decoration: none;">8-231-24531</a>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding-right:12px; width: 50%; text-align: right; padding-bottom: 8px;">
+                                                        <span style="font-family: sans-serif;margin: 0; text-align: center; font-weight: 600; font-size: 16px; line-height: 19px; color: #000000;">Стоимость</span>
+                                                    </td>
+                                                    <td style="padding-left:12px; width: 50%; text-align: left;">
+                                                        <span style="font-family: sans-serif;margin: 0; text-align: center; font-weight: 600; font-size: 16px; line-height: 19px; color: #000000; text-decoration: none;">25000 ₽</span>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding-right:12px; width: 50%; text-align: right; padding-bottom: 8px;">
+                                                        <span style="font-family: sans-serif;margin: 0; text-align: center; font-weight: 600; font-size: 16px; line-height: 19px; color: #000000;">Статус оплаты</span>
+                                                    </td>
+                                                    <td style="padding-left:12px; width: 50%; text-align: left;">
+                                                        <span style="font-family: sans-serif;margin: 0; text-align: center; font-weight: 600; font-size: 16px; line-height: 19px; color: #000000; text-decoration: none;">Оплачен</span>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding-right:12px; width: 50%; text-align: right; padding-bottom: 8px;">
+                                                        <span style="font-family: sans-serif;margin: 0; text-align: center; font-weight: 600; font-size: 16px; line-height: 19px; color: #000000;">Адрес доставки</span>
+                                                    </td>
+                                                    <td style="padding-left:12px; width: 50%; text-align: left;">
+                                                        <span style="font-family: sans-serif;margin: 0; text-align: center; font-weight: 600; font-size: 16px; line-height: 19px; color: #000000; text-decoration: none;">443026, Самарская область, Г. Самара, Управленческий,  ул Парижской Коммуны, д.34</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper" bgcolor="#ffffff"
+								style="padding: 16px 0px 48px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td
+											style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+											<h4 style="font-family: sans-serif; font-weight: 800; font-size: 24px; line-height: 29px; color: #000000;margin: 0;margin-bottom: 16px; text-align: center;">Состав заказа</h4>
+											<table class="card-item"
+												style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0; padding: 16px 16px 24px; border-bottom: 1px solid  #DCDCDC; margin-bottom: 14px;">
+												<tbody>
+													<tr>
+														<td width="132"
+															style="font-family: sans-serif;font-size: 14px;vertical-align: top;">
+															<img src="images/basket-item.png"
+																alt="" width="132" height="174"
+																style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+														</td>
+														<td
+															style="font-family: sans-serif;font-size: 14px;vertical-align: middle; padding-left: 16px; text-align: left;">
+															<p style="color: #ffffff;font-family: sans-serif;font-weight: 800; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000;margin:0;margin-bottom: 4px;">tom craft</p>
+                                                            <p style="color: #ffffff;font-family: sans-serif;font-weight: 500; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000;margin:0;margin-bottom: 4px;">пиджак</p>
+                                                            <p style="color: #ffffff;font-family: sans-serif;font-weight: 500; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000;margin:0;margin-bottom: 4px;">размер xl</p>
+                                                            <p style="color: #ffffff;font-family: sans-serif;font-weight: 500; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000;margin:0;">количество: 1</p>
+                                                        </td>
+                                                        <td style="font-family: sans-serif;font-size: 14px;vertical-align: middle; text-align: right;">
+                                                            <p style="color: #ffffff;font-family: sans-serif;font-weight: 800; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000;margin:0;" >₽ 12500</p>
+                                                        </td>
+													</tr>
+												</tbody>
+											</table>
+
+                                            <table class="card-item"
+												style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0; padding: 16px 16px 24px; border-bottom: 1px solid  #DCDCDC;">
+												<tbody>
+													<tr>
+														<td width="132"
+															style="font-family: sans-serif;font-size: 14px;vertical-align: top;">
+															<img src="images/basket-item.png"
+																alt="" width="132" height="174"
+																style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+														</td>
+														<td
+															style="font-family: sans-serif;font-size: 14px;vertical-align: middle; padding-left: 16px; text-align: left;">
+															<p style="color: #ffffff;font-family: sans-serif;font-weight: 800; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000;margin:0;margin-bottom: 4px;">tom craft</p>
+                                                            <p style="color: #ffffff;font-family: sans-serif;font-weight: 500; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000;margin:0;margin-bottom: 4px;">пиджак</p>
+                                                            <p style="color: #ffffff;font-family: sans-serif;font-weight: 500; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000;margin:0;margin-bottom: 4px;">размер xl</p>
+                                                            <p style="color: #ffffff;font-family: sans-serif;font-weight: 500; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000;margin:0;">количество: 1</p>
+                                                        </td>
+                                                        <td style="font-family: sans-serif;font-size: 14px;vertical-align: middle; text-align: right;">
+                                                            <p style="color: #ffffff;font-family: sans-serif;font-weight: 800; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000;margin:0;" >₽ 12500</p>
+                                                        </td>
+													</tr>
+												</tbody>
+											</table>
+
+                                            <p class="pay-info" style="color: #ffffff;font-family: sans-serif;font-weight: 500; font-size: 16px; line-height: 19px; letter-spacing: 0.1em;  text-align: right; color: #000000;margin:0; padding: 24px 16px 0;"><b style="color: #ffffff;font-family: sans-serif;font-weight: 800; font-size: 16px; line-height: 19px; letter-spacing: 0.1em; color: #000000;margin:0;">Итого:</b> 25000 ₽</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+
+
+						<tr>
+							<td class="wrapper footer"
+								style="padding: 16px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;background: #F3F3F3;"
+								bgcolor="blue">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tbody>
+										<tr>
+											<td style="padding: 0;font-family: sans-serif;vertical-align: top;">
+												<p style="color: #000;font-family: sans-serif;font-size: 1rem!important; line-height:24px;font-weight: normal;margin: 0; max-width: 443px; margin: 0 auto; margin-bottom: 24px; text-align: center;">По всем вопросам о вашем заказе вы можете обратиться к менеджерам по бесплатному телефону</p>
+											</td>
+										</tr>
+
+                                        <tr>
+											<td style="padding: 0;font-family: sans-serif;vertical-align: top;">
+												<a href="tel:+78007001944" style="text-decoration: none; display: block;  color: #000;font-family: sans-serif;font-weight: 800; font-size: 28px; line-height: 34px; text-align: center; color: #000000;margin: 0;text-align: center;">8 (800) 700-19-44</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+	<!-- END MAIN CONTENT AREA -->
+
+	<!-- END MAIN CONTENT AREA -->
+	</table>
+
+	<!-- END CENTERED WHITE CONTAINER -->
+	</div>
+	</td>
+	</tr>
+	</table>
+</body>
+
+</html>
