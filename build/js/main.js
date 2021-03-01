@@ -177,4 +177,28 @@ $(document).ready(function(){
         $('.payment-form').addClass('disabled');
     });
 
+    $('.card-description-open').click(function(e){
+        e.preventDefault();
+        $(this).addClass('is-active');
+        $('.card-description-close').addClass('is-active');
+        $('.card-description').addClass('is-active');
+    });
+
+    $('.card-description-close').click(function(e){
+        e.preventDefault();
+        $(this).removeClass('is-active');
+        $('.card-description-open').removeClass('is-active');
+        $('.card-description').removeClass('is-active');
+    });
+
+    $('.card-size-btn').click(function(e){
+        e.preventDefault();
+        $('.size-modal').addClass('is-active');
+    });
+
+    $('.size-close').click(function(e){
+        e.preventDefault();
+        $('.size-modal').removeClass('is-active');
+    });
+
 });

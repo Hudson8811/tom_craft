@@ -7,6 +7,43 @@
   margin: 0 auto;
   max-width: 1556px;
 
+  &-size-btn {
+    @include mMax {
+      display: none;
+    }
+  }
+
+  &-description {
+    opacity: 0;
+    transition: opacity 0.2s linear;
+
+    @include mMax {
+      opacity: 1;
+    }
+
+    &.is-active {
+      opacity: 1;
+    }
+
+    &-close {
+      display: none;
+
+      &.is-active {
+        display: block;
+      }
+    }
+
+    &-open {
+      &.is-active {
+        display: none;
+      }
+
+      @include mMax {
+        display: none;
+      }
+    }
+  }
+
   @include tMax {
     flex-direction: column;
     align-items: center;
@@ -111,11 +148,22 @@
       @include tMax {
         max-width: none;
       }
+
+      @include mMax {
+        font-size: 9px;
+        line-height: 11px;
+      }
     }
 
     ul {
       list-style: none;
       margin-bottom: 12px;
+
+      @include mMax {
+        font-size: 9px;
+        line-height: 11px;
+        margin-bottom: 40px;
+      }
     }
 
     h3 {
@@ -124,6 +172,12 @@
       font-weight: 600;
       font-size: 24px;
       line-height: 29px;
+
+      @include mMax {
+        margin-bottom: 0;
+        font-size: 16px;
+        line-height: 24px;
+      }
     }
 
     span {
@@ -133,6 +187,12 @@
       font-size: 24px;
       line-height: 29px;
 
+      @include mMax {
+        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
       b {
         font-family: sans-serif;
       }
@@ -141,6 +201,10 @@
 
   &-size {
     margin: 54px 0 24px;
+
+    @include mMax {
+      margin-bottom: 0;
+    }
 
     h4 {
       display: block;
@@ -166,22 +230,52 @@
       li {
         margin: 24px 13px;
 
-        a {
+        @include mMax {
+          margin: 24px 8px;
+        }
+
+        label {
           display: flex;
           justify-content: center;
           align-items: center;
           width: 32px;
           height: 32px;
-          font-size: 16px;
-          line-height: 19px;
-          text-decoration: none;
-          border: 1px solid transparent;
-          transition: border 0.2s linear;
-          color: #000;
 
-          &:hover,
-          &.is-active {
+          input {
+            display: none;
+          }
+
+          b {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            font-size: 16px;
+            line-height: 19px;
+            text-decoration: none;
+            border: 1px solid transparent;
+            transition: border 0.2s linear;
+            color: #000;
+            cursor: pointer;
+
+            &:hover {
+              border-color: #000000;
+            }
+
+            @include mMax {
+              border-color: #000000;
+            }
+          }
+
+          input:checked + b {
             border-color: #000000;
+
+            @include mMax {
+              background-color: #000;
+              color: #fff;
+            }
           }
         }
       }
@@ -357,6 +451,96 @@
           fill: #000;
         }
       }
+    }
+  }
+}
+
+.size-modal {
+  position: fixed;
+  z-index: -999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+
+  &.is-active {
+    opacity: 1;
+    z-index: 999;
+  }
+
+  &-content {
+    display: block;
+    width: calc(100% - 32px);
+    max-width: 969px;
+    overflow-x: auto;
+  }
+
+  &-title {
+    display: block;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  &-table {
+    width: 100%;
+    border: 1px solid #adadad;
+    border-collapse: collapse;
+    min-width: 580px;
+
+    tr {
+      &:nth-child(2n + 1) {
+        background: #e5e5e5;
+      }
+
+      &:first-child {
+        background-color: #000000;
+
+        td {
+          span {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    td {
+      width: 13%;
+      border: 1px solid #adadad;
+
+      &:first-child {
+        width: 22%;
+
+        span {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 5px 16px;
+      min-height: 44px;
+      font-weight: 800;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000;
     }
   }
 }

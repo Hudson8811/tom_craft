@@ -12,9 +12,11 @@
   border: 1px solid #dcdcdc;
 
   @include mMax {
-    .container {
-      width: calc(100% - 30px);
-    }
+    border: none;
+    border-top: 1px solid #dcdcdc;
+  }
+
+  @include mMax {
   }
 
   &-menu {
@@ -24,11 +26,10 @@
     align-items: center;
 
     @include mMax {
-      margin: 0 -15px;
-      justify-content: center;
+      justify-content: space-between;
 
       li {
-        margin: 0 15px;
+        margin: 0;
       }
     }
 
@@ -36,7 +37,7 @@
       margin-left: 40px;
 
       @include mMax {
-        margin-left: 15px;
+        margin-left: 0;
       }
     }
 
@@ -54,9 +55,36 @@
         line-height: 14px;
       }
 
+      @media screen and (max-width: 360px) {
+        font-size: 9px;
+        line-height: 12px;
+      }
+
       &:hover {
         opacity: 0.7;
       }
+    }
+  }
+  .mobile-lang {
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+      display: block;
+      margin-left: 8px;
+      width: 16px;
+      flex-shrink: 0;
+    }
+
+    @include mMax {
+      display: flex;
+    }
+  }
+
+  .desktop-lang {
+    @include mMax {
+      display: none;
     }
   }
 }
