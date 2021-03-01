@@ -81,6 +81,7 @@
     align-items: center;
     width: 100%;
     max-height: 100%;
+    overflow: hidden;
   }
 
   &-slider {
@@ -115,7 +116,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
+        object-position: top;
         margin: 0 auto;
       }
     }
@@ -453,6 +454,16 @@
       }
     }
   }
+
+  &-slider-sub {
+    position: absolute;
+    left: 78vw;
+    pointer-events: none;
+
+    @include tMax {
+      display: none;
+    }
+  }
 }
 
 .size-modal {
@@ -475,6 +486,8 @@
   }
 
   &-content {
+    position: relative;
+    z-index: 2;
     display: block;
     width: calc(100% - 32px);
     max-width: 969px;
