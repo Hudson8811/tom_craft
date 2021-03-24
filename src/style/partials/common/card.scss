@@ -87,6 +87,7 @@
   }
 
   &-wrapper {
+    position: relative;
     box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
@@ -103,14 +104,20 @@
   }
 
   &-slider {
-    width: calc(100% - 633px);
-    max-width: 729px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
     height: 100%;
     flex-grow: 1;
-    margin-right: 46px;
     box-sizing: border-box;
+    padding-left: 10.7vw;
 
     @include tMax {
+      padding-left: 0;
+      position: relative;
+      left: auto;
+      top: auto;
       margin: 0;
       margin-bottom: 20px;
       max-height: 400px;
@@ -135,26 +142,32 @@
 
     &-item {
       height: 100%;
-      width: 100%;
+      width: auto;
+      margin-right: 35vw;
 
       @include tMax {
         max-height: 400px;
+        margin: 0 20px;
       }
 
       img {
         display: block;
-        width: 100%;
+        width: 38vw;
         height: 100%;
         object-fit: cover;
         object-position: top center;
         margin: 0 auto;
+
+        @include tMax {
+          width: auto;
+        }
       }
     }
   }
 
   &-content {
-    width: 100%;
-    max-width: 587px;
+    width: 50%;
+    max-width: 746px;
     font-weight: normal;
     font-size: 12px;
     line-height: 14px;
@@ -164,12 +177,12 @@
     position: relative;
     z-index: 999;
     padding-top: 64px;
-    background-color: #fff;
     margin-right: 10px;
 
     @include tMax {
       text-align: center;
       padding-bottom: 40px;
+      width: 100%;
 
       a {
         margin: 0 auto;
@@ -495,6 +508,7 @@
     position: absolute;
     left: 84vw;
     pointer-events: none;
+    display: none;
 
     @include tMax {
       display: none;
