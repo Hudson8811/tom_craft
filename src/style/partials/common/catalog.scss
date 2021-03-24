@@ -51,8 +51,8 @@
 
   &-card {
     display: block;
-    width: calc(50% - 32px);
-    margin-right: 64px;
+    width: calc(50% - 96px);
+    margin-right: 192px;
     margin-bottom: 40px;
     text-decoration: none;
 
@@ -144,6 +144,7 @@
 
       @include mMax {
         margin-top: 16px;
+        text-align: center;
       }
 
       li {
@@ -177,12 +178,12 @@
 
     &-img {
       display: block;
-      width: auto;
+      width: 100%;
       margin: 0 auto;
       max-width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: top center;
       transition: opacity 0.2s linear;
 
       &-wrapper {
@@ -196,7 +197,8 @@
         }
 
         @include mMax {
-          max-height: 220px;
+          max-height: none;
+          height: auto;
         }
       }
     }
