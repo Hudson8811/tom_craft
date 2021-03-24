@@ -24,6 +24,8 @@ body {
 }
 
 .main {
+  position: relative;
+  z-index: 1;
   box-sizing: border-box;
   flex-grow: 1;
   display: flex;
