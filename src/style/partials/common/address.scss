@@ -1,0 +1,30 @@
+.address-block{
+  margin-top: 32px;
+
+}
+
+.address-form{
+  width: 100%;
+  max-width: 656px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+  .payment-label{
+    width: 100%;
+    max-width: 100%;
+    &.medium{
+      width: calc(50% - 8px);
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.hide-modal{
+  display: none;
+}
+

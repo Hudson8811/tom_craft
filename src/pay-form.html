@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Карточка товара</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrapper">
+    //= common/header
+
+    <main class="main">
+        <div class="container">
+            <div class="payment-wrapper">
+                <h2 class="payment-title">ОФОрмление заказа</h2>
+                <div class="payment-flexer">
+                    <div class="payment-content">
+                        <div class="payment-pipline">
+                            <div class="payment-pipline-item in">
+                                <b></b>
+                                <p>1. Доставка</p>
+                            </div>
+                            <div class="payment-pipline-item ">
+                                <b></b>
+                                <p>2. Оплата</p>
+                            </div>
+                            <div class="payment-pipline-item">
+                                <b></b>
+                                <p>3. Комментарий</p>
+                            </div>
+                            <div class="payment-pipline-bac_line"></div>
+                            <div class="payment-pipline-line" style="width: 0;"></div>
+                            <svg class="payment-pipline-icon" style="left:60px;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.0377 5.65808C23.0377 5.56691 23.0174 5.47573 22.9769 5.38962C22.8958 5.21739 22.7388 5.10089 22.5666 5.06543L12.2483 0.0607851C12.0811 -0.0202617 11.8836 -0.0202617 11.7164 0.0607851L1.29684 5.11102C1.09422 5.20726 0.962523 5.40988 0.952393 5.63782V5.64289C0.952393 5.64795 0.952393 5.65302 0.952393 5.66315V18.3369C0.952393 18.5699 1.08409 18.7826 1.29684 18.8839L11.7164 23.9341C11.7215 23.9341 11.7215 23.9342 11.7266 23.9392C11.7418 23.9443 11.757 23.9493 11.7721 23.9595C11.7772 23.9595 11.7823 23.9645 11.7924 23.9645C11.8076 23.9696 11.8228 23.9747 11.838 23.9797C11.8431 23.9797 11.8481 23.9848 11.8532 23.9848C11.8684 23.9899 11.8887 23.9899 11.9038 23.9949C11.9089 23.9949 11.914 23.9949 11.919 23.9949C11.9393 23.9949 11.9646 24 11.9849 24C12.0052 24 12.0305 24 12.0507 23.9949C12.0558 23.9949 12.0609 23.9949 12.0659 23.9949C12.0811 23.9949 12.1014 23.9899 12.1166 23.9848C12.1217 23.9848 12.1267 23.9797 12.1318 23.9797C12.147 23.9747 12.1622 23.9696 12.1774 23.9645C12.1824 23.9645 12.1875 23.9595 12.1976 23.9595C12.2128 23.9544 12.228 23.9493 12.2432 23.9392C12.2483 23.9392 12.2483 23.9392 12.2534 23.9341L22.7033 18.8687C22.911 18.7674 23.0478 18.5547 23.0478 18.3217V5.67328C23.0377 5.66821 23.0377 5.66315 23.0377 5.65808ZM11.9798 1.28155L21.0166 5.66315L17.6886 7.27902L8.65184 2.89743L11.9798 1.28155ZM11.9798 10.0447L2.94311 5.66315L7.25885 3.57113L16.2956 7.95272L11.9798 10.0447ZM2.1681 6.64078L11.372 11.1034V22.4145L2.1681 17.9519V6.64078ZM12.5877 22.4145V11.1034L16.9085 9.00633V11.9645C16.9085 12.2989 17.182 12.5724 17.5163 12.5724C17.8507 12.5724 18.1242 12.2989 18.1242 11.9645V8.41368L21.822 6.62051V17.9316L12.5877 22.4145Z" fill="black"/>
+                            </svg>
+                        </div>
+
+                        <div class="address-block">
+                            <h2 class="payment-tab-heading">Введите данные для доставки</h2>
+
+                            <form class="address-form">
+                                <label class="payment-label medium">
+                                    <p class="payment-label-title">Имя</p>
+                                    <p class="payment-label-error">ИМЯ ВВЕДЕНО НЕКОРРЕКТНО </p>
+                                    <input type="text" class="payment-input">
+                                </label>
+
+                                <label class="payment-label medium">
+                                    <p class="payment-label-title">Фамилия</p>
+                                    <p class="payment-label-error">ФАМИЛИЯ ВВЕДЕНА НЕКОРРЕКТНО</p>
+                                    <input type="text" class="payment-input">
+                                </label>
+                                <label class="payment-label">
+                                    <p class="payment-label-title">Email адрес</p>
+                                    <p class="payment-label-error">EMAIL ВВЕДЕН НЕКОРРЕКТНО</p>
+                                    <input type="text" class="payment-input">
+                                </label>
+                                <label class="payment-label">
+                                    <p class="payment-label-title">Страна</p>
+                                    <p class="payment-label-error">ВЫБЕРИТЕ СТРАНУ</p>
+                                    <input type="text" class="payment-input">
+                                </label>
+                                <label class="payment-label">
+                                    <p class="payment-label-title">Город</p>
+                                    <p class="payment-label-error">ВЫБЕРИТЕ ГОРОД</p>
+                                    <input type="text" class="payment-input">
+                                </label>
+                                <label class="payment-label">
+                                    <p class="payment-label-title">Адрес</p>
+                                    <p class="payment-label-error">ВВЕДИТЕ АДРЕС</p>
+                                    <input type="text" class="payment-input">
+                                </label>
+                                <label class="payment-label medium">
+                                    <p class="payment-label-title">Индекс</p>
+                                    <p class="payment-label-error">ВВЕДИТЕ ИНДЕКС</p>
+                                    <input type="text" class="payment-input">
+                                </label>
+                                <label class="payment-label medium">
+                                    <p class="payment-label-title">Телефон</p>
+                                    <p class="payment-label-error">ВВЕДИТЕ ТЕЛЕФОН</p>
+                                    <input type="text" class="payment-input">
+                                </label>
+
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="payment-bar">
+                        <div class="emerge_basket-heading">
+                            <span>итого</span>
+                        </div>
+
+                        <div class="payment-bar-content">
+                            <div class="payment-bar-item">
+                                <h2>tom craft</h2>
+                                <p>пиджак</p>
+                                <span><b>₽</b> 12500</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-bar-desc">
+                            <h2>SUbtotal <b>₽</b>25000 </h2>
+                            <a href="#" class="button payment-btn">оплатить</a>
+                            <p class="payment-bar-polic">Нажимая на кнопку «Оплатить» Вы соглашаетесь с <a href="#">политикой конфиденциальности.</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    //= common/footer
+</div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

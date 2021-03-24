@@ -3,16 +3,11 @@ var gulp = require("gulp"),
   cleanCSS = require("gulp-clean-css"),
   plumber = require("gulp-plumber"),
   autoprefixer = require("gulp-autoprefixer"),
-  gcmq = require("gulp-group-css-media-queries"),
   browserSync = require("browser-sync").create(),
   sourcemaps = require("gulp-sourcemaps"),
-  uglify = require("gulp-uglify"),
   rigger = require("gulp-rigger"),
-  imagemin = require("gulp-imagemin"),
-  pngquant = require("imagemin-pngquant"),
   rimraf = require("rimraf"),
-  reload = browserSync.reload,
-  pug = require("gulp-pug");
+  reload = browserSync.reload;
 
 var path = {
   build: {
