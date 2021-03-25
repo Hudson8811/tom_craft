@@ -11,13 +11,12 @@
   background-color: #fff;
   border: 1px solid #dcdcdc;
   z-index: 99;
+  flex-shrink: 0;
 
   @include mMax {
+    position: relative;
     border: none;
     border-top: 1px solid #dcdcdc;
-  }
-
-  @include mMax {
   }
 
   &-menu {
