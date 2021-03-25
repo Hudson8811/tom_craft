@@ -174,4 +174,7 @@ $(document).ready(function(){
 
 });
 
-getComputedStyle(document.documentElement).getPropertyValue("--sab")
+const a = getComputedStyle(document.documentElement).getPropertyValue("--sab")
+$('.wrapper').css({
+    paddingBottom:a,
+})
