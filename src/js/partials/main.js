@@ -174,7 +174,3 @@ $(document).ready(function(){
 
 });
 
-const a = getComputedStyle(document.documentElement).getPropertyValue("--sab")
-$('.wrapper').css({
-    marginBottom:`${a}`,
-})
