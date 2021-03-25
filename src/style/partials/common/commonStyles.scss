@@ -7,6 +7,10 @@ html {
   height: -webkit-fill-available;
 }
 
+:root {
+  --real100vh: 100vh;
+}
+
 body {
   position: relative;
   display: block;

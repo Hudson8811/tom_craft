@@ -201,3 +201,14 @@ $(document).ready(function(){
     });
 
 });
+
+function set100vhVar() {
+    // If less than most tablets, set CSS var to window height.
+    let value = "100vh"
+    if (this.winWidth <= 1024) {
+        value = `${window.innerHeight}px`
+    }
+    document.documentElement.style.setProperty("--real100vh", value)
+}
+
+set100vhVar()
