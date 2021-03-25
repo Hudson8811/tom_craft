@@ -204,5 +204,5 @@ $(document).ready(function(){
 
 const a = getComputedStyle(document.documentElement).getPropertyValue("--sab")
 $('.wrapper').css({
-    paddingBottom:a,
+    minHeight:`calc(100vh - ${a}`,
 })
