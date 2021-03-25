@@ -201,3 +201,5 @@ $(document).ready(function(){
     });
 
 });
+
+getComputedStyle(document.documentElement).getPropertyValue("--sat")

@@ -6,6 +6,13 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --sat: env(safe-area-inset-top);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+}
+
 body {
   position: relative;
   display: block;
@@ -21,9 +28,6 @@ body {
   justify-content: stretch;
   align-items: stretch;
   min-height: 100vh;
-
-  padding: constant(safe-area-inset-top) constant(safe-area-inset-right)
-    constant(safe-area-inset-bottom) constant(safe-area-inset-left);
 }
 
 .main {
