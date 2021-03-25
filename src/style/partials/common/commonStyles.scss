@@ -12,6 +12,8 @@ body {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .wrapper {
@@ -21,8 +23,6 @@ body {
   flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 .main {
