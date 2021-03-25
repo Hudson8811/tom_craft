@@ -10,6 +10,7 @@
   align-items: center;
   background-color: #fff;
   border: 1px solid #dcdcdc;
+  z-index: 99;
 
   @include mMax {
     border: none;

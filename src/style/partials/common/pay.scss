@@ -317,6 +317,7 @@
     color: #000000;
     border: 1px solid #dcdcdc;
     border-radius: 0;
+    box-shadow: none;
 
     &.textarea {
       padding: 12px;
@@ -326,6 +327,11 @@
       @include mMax {
         height: 124px;
       }
+    }
+
+    &.select {
+      appearance: none;
+      background: calc(100% - 12px) center / 10px 10px url(../img/arrow-point-to-down.svg) no-repeat;
     }
   }
 
