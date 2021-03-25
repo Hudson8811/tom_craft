@@ -13,7 +13,10 @@ html {
 
 body {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
