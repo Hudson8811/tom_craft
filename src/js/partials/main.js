@@ -176,5 +176,5 @@ $(document).ready(function(){
 
 const a = getComputedStyle(document.documentElement).getPropertyValue("--sab")
 $('.wrapper').css({
-    minHeight:`calc(100vh - ${a}`,
+    marginBottom:`${a}`,
 })
