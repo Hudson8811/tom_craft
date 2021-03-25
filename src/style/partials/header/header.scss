@@ -307,6 +307,11 @@
     align-items: flex-start;
     margin-bottom: 16px;
 
+    &--wrapper {
+      max-height: 276px;
+      overflow-y: auto;
+    }
+
     img {
       display: block;
       margin-right: 16px;
