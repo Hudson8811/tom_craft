@@ -318,6 +318,8 @@
     border: 1px solid #dcdcdc;
     border-radius: 0;
     box-shadow: none;
+    appearance: none;
+    background: transparent;
 
     &.textarea {
       padding: 12px;
