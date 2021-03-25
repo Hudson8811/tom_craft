@@ -4,7 +4,7 @@
 
 html {
   scroll-behavior: smooth;
-  height: -webkit-fill-available;
+  height: fill-available;
 }
 
 :root {
@@ -18,7 +18,7 @@ body {
   font-style: normal;
   font-weight: 400;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
+  min-height: fill-available;
 }
 
 .wrapper {
@@ -29,7 +29,7 @@ body {
   justify-content: stretch;
   align-items: stretch;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
+  min-height: fill-available;
 }
 
 .main {
