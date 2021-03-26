@@ -311,6 +311,19 @@
     &--wrapper {
       max-height: 276px;
       overflow-y: auto;
+      padding-right: 10px;
+      margin-bottom: 10px;
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background-color: #000;
+      }
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        border-radius: 3px;
+        background-color: gray;
+      }
     }
 
     img {
