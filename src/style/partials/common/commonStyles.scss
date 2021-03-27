@@ -29,6 +29,10 @@ body {
     height: -webkit-fill-available;
     height: fill-available;
     overflow: hidden;
+
+    @media (orientation: landscape) {
+      height: 80vh;
+    }
   }
 }
 
