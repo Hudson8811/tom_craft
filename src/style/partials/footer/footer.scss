@@ -19,6 +19,12 @@
     border-top: 1px solid #dcdcdc;
   }
 
+  @media (orientation: landscape) {
+    position: relative;
+    border: none;
+    border-top: 1px solid #dcdcdc;
+  }
+
   &-menu {
     list-style: none;
     display: flex;

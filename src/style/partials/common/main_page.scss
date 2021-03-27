@@ -9,6 +9,10 @@
     max-height: 100vh;
     @include mMax {
     }
+
+    @media screen and (orientation: landscape) and (max-width: 813px) {
+      overflow: hidden;
+    }
   }
 
   &-bg {
@@ -22,7 +26,7 @@
       height: 100%;
     }
 
-    @media (orientation: landscape) {
+    @media screen and (orientation: landscape) and (max-width: 813px) {
       height: 100%;
     }
   }

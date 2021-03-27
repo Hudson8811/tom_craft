@@ -167,26 +167,29 @@
   }
 
   &-content {
-    width: 50%;
-    max-width: 746px;
+    position: absolute;
+    width: calc(100vw - 48.7vw - 46px);
     font-weight: normal;
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #000000;
-    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
     z-index: 999;
-    padding-top: 64px;
-    margin-right: 10px;
-    padding-right: 15%;
     box-sizing: border-box;
+    padding-top: 64px;
+    padding-right: calc(100vw - 48.7vw - 2.4vw - 32.5vw);
 
     @include tMax {
+      position: relative;
       text-align: center;
       padding-bottom: 40px;
       width: 100%;
       padding-right: 0;
+      padding-left: 0;
 
       .button {
         margin: 0 auto;
@@ -198,60 +201,60 @@
     }
 
     p {
-      display: block;
-      max-width: 416px;
-      margin-bottom: 12px;
+      display: block !important;
+      max-width: 416px !important;
+      margin-bottom: 12px !important;
 
       @include tMax {
-        max-width: none;
+        max-width: none !important;
       }
 
       @include mMax {
-        font-size: 9px;
-        line-height: 11px;
+        font-size: 9px !important;
+        line-height: 11px !important;
       }
     }
 
     ul {
-      list-style: none;
-      margin-bottom: 12px;
+      list-style: none !important;
+      margin-bottom: 12px !important;
 
       @include mMax {
-        font-size: 9px;
-        line-height: 11px;
-        margin-bottom: 40px;
+        font-size: 9px !important;
+        line-height: 11px !important;
+        margin-bottom: 40px !important;
       }
     }
 
     h3 {
       display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 29px;
+      margin-bottom: 8px !important;
+      font-weight: 600 !important;
+      font-size: 24px !important;
+      line-height: 29px !important;
 
       @include mMax {
-        margin-bottom: 0;
-        font-size: 16px;
-        line-height: 24px;
+        margin-bottom: 0 !important;
+        font-size: 16px !important;
+        line-height: 24px !important;
       }
     }
 
     span {
       display: block;
-      margin-bottom: 40px;
-      font-weight: 800;
-      font-size: 24px;
-      line-height: 29px;
+      margin-bottom: 40px !important;
+      font-weight: 800 !important;
+      font-size: 24px !important;
+      line-height: 29px !important;
 
       @include mMax {
-        margin-bottom: 8px;
-        font-size: 16px;
-        line-height: 24px;
+        margin-bottom: 8px !important;
+        font-size: 16px !important;
+        line-height: 24px !important;
       }
 
       b {
-        font-family: sans-serif;
+        font-family: sans-serif !important;
       }
     }
   }
