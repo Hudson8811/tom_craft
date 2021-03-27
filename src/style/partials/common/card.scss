@@ -148,6 +148,7 @@
       @include tMax {
         max-height: 400px;
         margin: 0 20px;
+        max-width: 300px;
       }
 
       img {
@@ -160,6 +161,7 @@
 
         @include tMax {
           width: auto;
+          max-width: 100%;
         }
       }
     }
@@ -187,7 +189,11 @@
       width: 100%;
       padding-right: 0;
 
-      a {
+      .button {
+        margin: 0 auto;
+      }
+
+      .link {
         margin: 0 auto;
       }
     }
@@ -382,6 +388,17 @@
       width: 117px;
       max-height: 80vh;
       overflow-y: auto;
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 0px;
+        background-color: #000;
+      }
+
+      &::-webkit-scrollbar {
+        width: 4px;
+        border-radius: 0px;
+        background-color: #fff;
+      }
 
       @include mMax {
         display: none;

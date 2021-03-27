@@ -5,10 +5,9 @@
 
   &-wrapper {
     flex-grow: 1;
-    height: 100vh;
     width: 100vw;
+    max-height: 100vh;
     @include mMax {
-      height: fill-available;
     }
   }
 
@@ -16,12 +15,11 @@
     display: block;
     width: 100%;
     height: 100%;
-
     object-position: center;
     object-fit: cover;
 
     @include mMax {
-      min-height: fill-available;
+      height: 100%;
     }
   }
 
@@ -58,6 +56,14 @@
 
     .footer-menu a {
       color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .header-burger {
+    svg {
+      path {
+        fill: #ffffff;
+      }
     }
   }
 }

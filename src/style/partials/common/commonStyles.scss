@@ -21,8 +21,12 @@ body {
   font-style: normal;
   font-weight: 400;
   min-height: 100vh;
-  min-height: fill-available;
+  height: auto;
+
   @include mMax {
+    min-height: 1px;
+    height: 100vh;
+    height: -webkit-fill-available;
     height: fill-available;
     overflow: hidden;
   }
@@ -35,8 +39,8 @@ body {
   flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
-  min-height: 100vh;
-  min-height: fill-available;
+  min-height: -webkit-fill-available;
+  height: fill-available;
 
   @include mMax {
     position: relative;
@@ -95,6 +99,7 @@ body {
   width: max-content;
   transition: opacity 0.2s linear;
   cursor: pointer;
+  -webkit-appearance: none;
 
   &:hover {
     opacity: 0.7;
