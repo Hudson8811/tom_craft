@@ -19,7 +19,7 @@
     border-top: 1px solid #dcdcdc;
   }
 
-  @media (orientation: landscape) {
+  @media screen and (orientation: landscape) and (max-width: 813px) {
     position: relative;
     border: none;
     border-top: 1px solid #dcdcdc;
