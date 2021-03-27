@@ -21,6 +21,10 @@
     @include mMax {
       height: 100%;
     }
+
+    @media (orientation: landscape) {
+      height: 100%;
+    }
   }
 
   .header {
